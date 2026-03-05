@@ -1,0 +1,31 @@
+<table class="table table-striped border">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Producto</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Cantidad</th>
+			<th scope="col">Total</th>
+			<th scope="col">Fecha</th>
+			<th scope="col">Estado</th>
+		</tr>
+	</thead>
+	<tbody>
+    @for (sale of sales; track sale) {
+      <tr>
+        <th scope="row">{{ sale.id }}</th>
+        <td>{{ sale.productId }}</td>
+        <td>{{ sale.name }}</td>
+        <td>{{ sale.quantity }}</td>
+        <td>{{ sale.total | currency }}</td>
+        <td>{{ sale.date | date:'shortDate' }}</td>
+        <td>
+          <app-badge
+            [text]="sale.status"
+            [type]="statusMap[sale.status]" >
+          </app-badge>
+        </td>
+      </tr>
+    }
+	</tbody>
+</table>

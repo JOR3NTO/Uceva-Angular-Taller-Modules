@@ -1,5 +1,13 @@
 import { Supplier } from "../../modules/suppliers/interfaces/suppliers.interface";
 
+/**
+ * Datos mock de proveedores.
+ *
+ * Esta constante centraliza proveedores de ejemplo
+ * para pruebas, desarrollo local y demostraciones de UI.
+ *
+ * @type {Supplier[]}
+ */
 export const SUPPLIERS: Supplier[] = [
   {
     id: 1,

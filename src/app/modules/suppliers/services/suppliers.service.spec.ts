@@ -1,23 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { SUPPLIERS } from '../../../core/config/suppliers.config';
 
 import { SuppliersService } from './suppliers.service';
 
 describe('SuppliersService', () => {
-  let component: SuppliersService;
-  let fixture: ComponentFixture<SuppliersService>;
+  let service: SuppliersService;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [SuppliersService]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(SuppliersService);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(SuppliersService);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('deberia crearse correctamente', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('getAllSuppliers deberia retornar un observable con los proveedores', (done) => {
+    service.getAllSuppliers().subscribe((suppliers) => {
+      expect(suppliers).toEqual(SUPPLIERS);
+      expect(suppliers.length).toBe(SUPPLIERS.length);
+      done();
+    });
   });
 });

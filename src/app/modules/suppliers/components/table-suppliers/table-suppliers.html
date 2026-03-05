@@ -1,0 +1,20 @@
+<table class="table table-striped border">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo de contacto</th>
+      <th scope="col">Telefono</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (supplierItem of supplier; track supplierItem) {
+      <tr>
+        <th scope="row">{{ supplierItem.id }}</th>
+        <td>{{ supplierItem.name }}</td>
+        <td>{{ supplierItem.contactEmail }}</td>
+        <td>{{ supplierItem.phoneNumber }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

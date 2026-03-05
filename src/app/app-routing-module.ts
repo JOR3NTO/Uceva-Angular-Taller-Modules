@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/sales/sales-module').then(m => m.SalesModule)
   },
   {
+    path: 'suppliers',
+    loadChildren: () => import('./modules/suppliers/suppliers-module').then(m => m.SuppliersModule)
+  },
+  {
     path: '**',
     redirectTo: 'users'
   },

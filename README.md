@@ -126,3 +126,26 @@ src/app/modules/users/components/table-users/
 - Todos los componentes deben pertenecer a un NgModule
 - Mantener una estructura clara favorece la escalabilidad y mantenibilidad
 - Usar Angular CLI evita errores de configuración manual
+
+
+## ⚡️ Comandos generales Angular CLI
+
+A continuación se listan los comandos más comunes para generar archivos en la carpeta modules:
+
+### Generar módulo con routing
+ng g m modules/[nombre] --routing 
+o
+### Generar componente contenedor (shell)
+ng g c modules/[nombre] --flat --standalone=false
+
+### Generar página de listado
+ng g c modules/[nombre]/pages/list-[nombre] --standalone=false
+
+### Generar componente de tabla
+ng g c modules/[nombre]/components/table-[nombre] --standalone=false
+
+### Generar servicio
+ng g s modules/[nombre]/services/[nombre]
+
+### Generar interfaz base
+ng g i modules/[nombre]/interfaces/[nombre]

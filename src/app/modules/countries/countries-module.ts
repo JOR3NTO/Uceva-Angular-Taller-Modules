@@ -7,7 +7,12 @@ import { ListCountriesComponent } from './pages/list-countries.component/list-co
 import { TableCountriesComponent } from './components/table-countries.component/table-countries.component';
 import { SharedModule } from '../shared/shared-module';
 
-
+/**
+ * Modulo de paises.
+ *
+ * Agrupa componentes, rutas y dependencias necesarias
+ * para la funcionalidad de consulta y visualizacion de paises.
+ */
 @NgModule({
   declarations: [
     ListCountriesComponent,
@@ -20,4 +25,7 @@ import { SharedModule } from '../shared/shared-module';
     SharedModule
   ]
 })
+/**
+ * Modulo principal de la funcionalidad `countries`.
+ */
 export class CountriesModule { }

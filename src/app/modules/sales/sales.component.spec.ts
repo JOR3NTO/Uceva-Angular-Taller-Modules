@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { SalesComponent } from './sales.component';
 
@@ -8,7 +9,8 @@ describe('SalesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SalesComponent]
+      declarations: [SalesComponent],
+      imports: [RouterTestingModule],
     })
     .compileComponents();
 
@@ -17,7 +19,12 @@ describe('SalesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('deberia crear el componente', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('deberia renderizar router-outlet', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });

@@ -1,8 +1,9 @@
-import { Sale } from "../../modules/sales/interfaces/sales.interface";
+import { Sale } from '../../modules/sales/interfaces/sales.interface';
 
 /**
  * Listado de ventas del sistema.
  *
+ * @remarks
  * Esta constante representa un conjunto de datos de prueba (mock)
  * que simula la respuesta de un backend REST.
  *

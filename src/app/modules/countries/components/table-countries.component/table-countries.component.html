@@ -1,0 +1,24 @@
+<table class="table table-striped table-hover align-middle">
+  <thead>
+    <tr>
+      <th>Bandera</th>
+      <th>Nombre</th>
+      <th>Capital</th>
+      <th>Region</th>
+      <th>Poblacion</th>
+      <th>Codigo</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (countryItem of countries; track countryItem) {
+      <tr>
+        <td><img [src]="countryItem.flags.png" alt="Bandera de {{ countryItem.name.common }}" width="50"></td>
+        <td>{{ countryItem.name.common }}</td>
+        <td>{{ countryItem.capital?.[0] || 'N/A' }}</td>
+        <td>{{ countryItem.region }}</td>
+        <td>{{ countryItem.population | number }}</td>
+        <td>{{ countryItem.cca2 }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

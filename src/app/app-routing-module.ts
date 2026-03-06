@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/countries/countries-module').then(m => m.CountriesModule)
   },
   {
+    path: 'comments',
+    loadChildren: () => import('./modules/comments/comments-module').then(m => m.CommentsModule)
+  },
+  {
     path: '**',
     redirectTo: 'users'
   },

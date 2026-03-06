@@ -1,0 +1,31 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { CommentsRoutingModule } from './comments-routing-module';
+import { CommentsComponent } from './comments.component';
+import { TableCommentsComponent } from './components/table-component/table-comments.component/table-comments.component';
+import { ListCommentsComponent } from './pages/list-comments.component/list-comments.component';
+import { SharedModule } from '../shared/shared-module';
+
+/**
+ * Módulo `CommentsModule`.
+ *
+ * Agrupa la funcionalidad relacionada con comentarios: rutas, componentes
+ * y servicios. Está pensado para cargarse de forma lazy (ver `app-routing`).
+ * Compodoc mostrará este módulo y sus miembros en la documentación.
+ *
+ * @module CommentsModule
+ */
+@NgModule({
+  declarations: [
+    CommentsComponent,
+    TableCommentsComponent,
+    ListCommentsComponent
+  ],
+  imports: [
+    CommonModule,
+    CommentsRoutingModule,
+    SharedModule
+  ]
+})
+export class CommentsModule { }

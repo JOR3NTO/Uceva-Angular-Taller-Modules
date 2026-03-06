@@ -1,0 +1,34 @@
+<div class="table-responsive">
+  <table class="table table-striped table-hover border align-middle">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Post</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Comentario</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (comments.length === 0) {
+        <tr>
+          <td colspan="5" class="text-center text-muted py-4">
+            No hay comentarios para mostrar.
+          </td>
+        </tr>
+      } @else {
+        @for (comment of comments; track comment.id) {
+          <tr>
+            <th scope="row">{{ comment.id }}</th>
+            <td>{{ comment.postId }}</td>
+            <td>{{ comment.name }}</td>
+            <td>
+              <a [href]="'mailto:' + comment.email">{{ comment.email }}</a>
+            </td>
+            <td>{{ comment.body }}</td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>

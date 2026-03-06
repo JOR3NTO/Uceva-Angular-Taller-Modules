@@ -128,7 +128,7 @@ src/app/modules/users/components/table-users/
 - Usar Angular CLI evita errores de configuración manual
 
 
-## ⚡️ Comandos generales Angular CLI
+## Comandos generales Angular CLI
 
 A continuación se listan los comandos más comunes para generar archivos en la carpeta modules:
 
@@ -149,3 +149,19 @@ ng g s modules/[nombre]/services/[nombre]
 
 ### Generar interfaz base
 ng g i modules/[nombre]/interfaces/[nombre]
+
+## APIs utilizadas
+
+Este proyecto consume datos de dos APIs públicas:
+
+### 1) REST Countries (módulo `countries`)
+- URL base: `https://restcountries.com/v3.1/all`
+- Endpoint usado:
+  `https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags,cca2`
+- Uso: obtener el listado de países con campos optimizados para la tabla.
+
+### 2) JSONPlaceholder (módulo `comments`)
+- URL base: `https://jsonplaceholder.typicode.com`
+- Endpoint usado:
+  `https://jsonplaceholder.typicode.com/comments`
+- Uso: obtener comentarios (`postId`, `id`, `name`, `email`, `body`) para el listado del módulo de comentarios.
